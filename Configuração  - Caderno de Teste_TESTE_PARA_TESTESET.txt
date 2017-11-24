@@ -1,0 +1,50 @@
+{
+  "config.version" : "2.0",
+  "config.project.from.csv" : "false",
+  "config.encoding" : "ISO-8859-1",
+  "config.email.suffix" : "@",
+  "config.field.mappings" : {
+    "Issue Type" : {
+      "jira.field" : "issuetype"
+    },
+    "Custom field (Test Sets association with a Test)" : {
+      "existing.custom.field" : "10616"
+    },
+    "Manual Test Steps" : {
+      "existing.custom.field" : "10614"
+    },
+    "Summary" : {
+      "jira.field" : "summary"
+    },
+    "Test Type" : {
+      "existing.custom.field" : "10610"
+    }
+  },
+  "config.value.mappings" : {
+    "Issue Type" : {
+      "Test" : "10000"
+    },
+    "Custom field (Test Sets association with a Test)" : {
+      "FSWOSSOI-1203" : "FSWOSSOI-1203"
+    },
+    "Manual Test Steps" : {
+      "[ { \"index\": 0, \"step\": \"Acessar o módulo Painel de Configuração através do caminho: Meus Atalhos > Cadeia Velox > Dashboard Cadeia Velox > Painel de Configuração\", \"data\": \"\", \"result\": \"nenhum mesmo\" }, { \"index\": 1, \"step\": \"Acionar o separador Configuração de Alarmes\", \"data\": \"\", \"result\": \"Excepted result 2\" } ]" : "[ { \"index\": 0, \"step\": \"Acessar o módulo Painel de Configuração através do caminho: Meus Atalhos > Cadeia Velox > Dashboard Cadeia Velox > Painel de Configuração\", \"data\": \"\", \"result\": \"nenhum mesmo\" }, { \"index\": 1, \"step\": \"Acionar o separador Configuração de Alarmes\", \"data\": \"\", \"result\": \"Excepted result 2\" } ]"
+    },
+    "Summary" : {
+      "Ulysses Teste" : "Ulysses Teste"
+    },
+    "Test Type" : {
+      "Manual" : "Manual"
+    }
+  },
+  "config.delimiter" : ";",
+  "config.project" : {
+    "project.type" : null,
+    "project.key" : "FSWOSSOI",
+    "project.description" : null,
+    "project.url" : null,
+    "project.name" : "Fabrica de Software OSS Operações Oi",
+    "project.lead" : "cleiton-bassani"
+  },
+  "config.date.format" : "yyyy/MM/dd HH:mm"
+}

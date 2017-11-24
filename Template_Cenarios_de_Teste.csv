@@ -1,0 +1,2 @@
+Custom field (Test Sets association with a Test);Summary; Assignee; Reporter; Issue Type; Description; Test Type; Manual Test Steps
+FSWOSSOI-1203;Ulysses Teste;;;Test;;Manual;"[ { ""index"": 0, ""step"": ""Acessar o módulo Painel de Configuração através do caminho: Meus Atalhos > Cadeia Velox > Dashboard Cadeia Velox > Painel de Configuração"", ""data"": """", ""result"": ""nenhum mesmo"" }, { ""index"": 1, ""step"": ""Acionar o separador Configuração de Alarmes"", ""data"": """", ""result"": ""Excepted result 2"" } ]"
