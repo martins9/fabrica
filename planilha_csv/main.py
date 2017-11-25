@@ -1,16 +1,24 @@
+# -*- coding: utf-8 -*-
+
 import csv
 from t_limpeza.t_function_limpeza import tirar_pontos_virgulas
 
+# Insercao de informacoes
+n_demanda=raw_input("Insira o numero da demanda:")
+arquivo=raw_input("Insira o nome do arquivo:")
 n_issue=raw_input("Insira numero do Test Set:")
 n_assigne=raw_input("Insire Assigne:")
 
-arquivo='8921.csv'
-tirar_pontos_virgulas(arquivo)
+# Tirando as virgulas do arquivo
+tirar_pontos_virgulas(arquivo,n_demanda)
 
-arq2 = open('8921_final.csv', 'w')
-with open("8921_1.csv", 'rU') as csvIN:
+arq2 = open(n_demanda+'_final.csv', 'w')
+with open(n_demanda+"_1.csv", 'rU') as csvIN:
 
     outCSV=(line for line in csv.reader(csvIN, dialect='excel'))
+
+    for row in outCSV:
+        print row
 
     print "Custom, field(Test Sets association with a Test),Summary,Assignee,Reporter,Issue Type,Description," + \
             "Test Type, Manual Test Steps"

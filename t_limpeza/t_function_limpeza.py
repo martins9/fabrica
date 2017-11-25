@@ -1,9 +1,9 @@
 import sys
 
-def tirar_pontos_virgulas(a):
+def tirar_pontos_virgulas(a,b):
     try:
         arq1=open(a,'r')
-        arq2=open('8921_1.csv','w')
+        arq2=open(b+'_1.csv','w')
 
         for line in arq1:
             new_lines=line.replace(";",",")
