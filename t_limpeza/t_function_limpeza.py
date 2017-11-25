@@ -1,4 +1,4 @@
-import sys
+import sys,os
 
 def tirar_pontos_virgulas(a,b):
     try:
@@ -14,3 +14,6 @@ def tirar_pontos_virgulas(a,b):
     except OSError:
         print "Arquivo vazio"
         sys.exit()
+
+def deletar(c):
+    os.remove(c)
