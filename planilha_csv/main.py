@@ -14,7 +14,7 @@ arq2 = open(n_demanda + '_final.csv', 'w')
 with open(n_demanda + "_1.csv", 'rU') as csvIN:
     outCSV = (line for line in csv.reader(csvIN, dialect='excel'))
 
-    part0 = "Custom; field(Test Sets association with a Test);Summary;Assignee;Reporter;Issue Type;Description;" + \
+    part0 = "Custom field(Test Sets association with a Test);Summary;Assignee;Reporter;Issue Type;Description;" + \
           "Test Type;Manual Test Steps"+"\n"
     arq2.writelines(part0)
 
@@ -25,19 +25,19 @@ with open(n_demanda + "_1.csv", 'rU') as csvIN:
             a = row[1].split('\n')
             count1 = 0
 
-            part1=n_issue + ";" + row[0] + ";" + n_assigne + ";;" + "Test;;Manual;[",
+            part1=n_issue + ";" + row[0] + ";" + n_assigne + ";;" + "Test;;Manual;"+'"[',
             arq2.writelines(part1)
 
             for teste in range(len(a)):
-                count1 += 1
                 if teste != (len(a) - 1):
-                    part2 = '{"index":' + str(count1) + ';' + '"step":"' + a[teste] + '";"data":"";"result":""};',
+                    part2 = '{ ""index"": ' + str(count1) + ', ' + '""step"": ""' + a[teste] + '"", ""data"": """", ""result"": """" }, ',
                     arq2.writelines(part2)
                 else:
-                    part3 = '{"index":' + str(count1) + ';' + '"step":"' + a[teste] + '";"data":"";' + '"result":"' + \
-                            row[2].replace("\n",". ") + '"}]',
+                    part3 = '{ ""index"": ' + str(count1) + ', ' + '""step"": ""' + a[teste] + '"", ""data"": """", ""result"": ""' + \
+                            row[2].replace("\n",". ") + '"" } ]"',
                     arq2.writelines(part3)
                     arq2.writelines("\n")
+                count1 += 1
 
 # Deletar arquivo
 deletar(n_demanda+"_1.csv")
