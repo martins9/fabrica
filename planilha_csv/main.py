@@ -28,10 +28,10 @@ with open(arquivo, 'rU') as csvIN:
     for row in outCSV:
         count += 1
         if count > 1:
-            a = row[2].split('\n')
+            a = row[4].split('\n')
             count1 = 0
 
-            part1=n_issue + ";" + row[1] + ";" + n_assigne + ";;" + "Test;"+'"'+row[0]+'"'+";Manual;"+'"[',
+            part1=n_issue + ";" + row[3] + ";" + n_assigne + ";;" + "Test;"+'"'+row[2]+'"'+";Manual;"+'"[',
             arq2.writelines(part1)
             #print part1
 
@@ -39,16 +39,15 @@ with open(arquivo, 'rU') as csvIN:
             for teste in range(len(a)):
                 if teste != (len(a) - 1):
                     part2 = '{ ""index"": ' + str(count1) + ', ' + '""step"": ""' + a[teste].replace("- ","") + \
-                            '"", ""data"": """", ""result"": """" }, ',
+                            '"", ""data"": ""'+ row[0].split('.')[-1]+" e "+row[1]+ '"", ""result"": """" }, ',
                     arq2.writelines(part2)
                     #print part2
                 else:
                     part3 = '{ ""index"": ' + str(count1) + ', ' + '""step"": ""' + a[teste].replace("- ","") + \
-                            '"", ""data"": """", ""result"": ""' + row[3] + '"" } ]"',
+                            '"", ""data"": ""'+ row[0].split('.')[-1]+" e "+row[1]+ '"", ""result"": ""' + row[5] + '"" } ]"',
                     arq2.writelines(part3)
                     #print part3
                     arq2.writelines("\n")
-                    #print "\n"
                 count1 += 1
 
 # Deletar arquivo
